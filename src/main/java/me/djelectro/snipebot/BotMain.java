@@ -1,9 +1,8 @@
 package me.djelectro.snipebot;
 
-import me.djelectro.snipebot.commands.Command;
+import me.djelectro.snipebot.commands.Module;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.hooks.AnnotatedEventManager;
 import org.reflections.Reflections;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
@@ -34,10 +33,10 @@ public class BotMain {
 
         Reflections reflections = new Reflections(new ConfigurationBuilder().setUrls(ClasspathHelper.forClassLoader(classLoadersList.toArray(new ClassLoader[0]))).forPackage("me.djelectro.snipebot").filterInputsBy(new FilterBuilder().includePackage("me.djelectro.snipebot.commands")).setScanners(SubTypes.filterResultsBy(c -> true)));
         for (Class<?> classes : reflections.get(SubTypes.of(Object.class).asClass())) {
-            if(classes.getSuperclass() == Command.class){
+            if(classes.getSuperclass() == Module.class){
                 System.out.println("Adding " + classes.getName());
-                Command c = (Command) classes.getDeclaredConstructors()[0].newInstance();
-                c.registerCommands(bot);
+                Module c = (Module) classes.getDeclaredConstructors()[0].newInstance();
+                c.register(bot);
                 System.out.println("Added event listener");
                 bot.addEventListener(c);
             }

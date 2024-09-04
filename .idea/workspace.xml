@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b62020bf-3a86-4581-96a0-16607e9d114e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/BotMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/annotations/SlashCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/annotations/SlashCommandOption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/commands/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/commands/PingPong.java" afterDir="false" />
+    <list default="true" id="b62020bf-3a86-4581-96a0-16607e9d114e" name="Changes" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/annotations/EventHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/commands/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/BotMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/BotMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/commands/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/commands/PingPong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/commands/PingPong.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +39,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Bot.executor": "Run",
+    "Application.Bot.executor": "Debug",
     "Maven.SnipeBot [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor": "Run",
     "Maven.SnipeBot [package].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -91,11 +84,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1725395997128</updated>
-      <workItem from="1725395998152" duration="10456000" />
+      <workItem from="1725395998152" duration="15085000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1725426593811</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725426593811</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
   </component>
 </project>
