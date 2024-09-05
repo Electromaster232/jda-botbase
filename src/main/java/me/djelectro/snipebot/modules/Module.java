@@ -1,4 +1,4 @@
-package me.djelectro.snipebot.commands;
+package me.djelectro.snipebot.modules;
 
 import me.djelectro.snipebot.annotations.EventHandler;
 import me.djelectro.snipebot.annotations.SlashCommand;

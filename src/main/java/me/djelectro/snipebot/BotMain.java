@@ -1,6 +1,7 @@
 package me.djelectro.snipebot;
 
-import me.djelectro.snipebot.commands.Module;
+import com.mchange.v2.c3p0.ComboPooledDataSource;
+import me.djelectro.snipebot.modules.Module;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import org.reflections.Reflections;
@@ -27,6 +28,26 @@ public class BotMain {
         }catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        ComboPooledDataSource cpds = new ComboPooledDataSource();
+        try {
+            // Set the JDBC driver
+            cpds.setDriverClass("org.sqlite.JDBC");
+
+            // Set the JDBC URL for SQLite
+            cpds.setJdbcUrl("jdbc:sqlite:/path/to/your/database.db");
+
+            // Optional settings
+            cpds.setMinPoolSize(5);
+            cpds.setAcquireIncrement(5);
+            cpds.setMaxPoolSize(20);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error initializing C3P0", e);
+        }
+
+        Database.initialize(new Database(cpds));
 
         JDA bot = JDABuilder.createDefault(config.getConfigValue("botToken"))
                 .build();
