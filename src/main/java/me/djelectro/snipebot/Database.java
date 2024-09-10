@@ -26,7 +26,7 @@ public class Database {
   private static Database instance;
 
   public static void initialize(Database db){
-      if(instance == null) {
+      if(instance != null) {
           logger.error("Tried to initialize a new database when one is already set!");
           return;
       }

@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b62020bf-3a86-4581-96a0-16607e9d114e" name="Changes" comment="Fix maven">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/Database.java" afterDir="false" />
+    <list default="true" id="b62020bf-3a86-4581-96a0-16607e9d114e" name="Changes" comment="Begin adding database functions">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/Snipe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/types/Snipe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/types/SnipeGuild.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/types/SnipePlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/BotMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/BotMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/commands/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/commands/PingPong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/PingPong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/annotations/SlashCommandOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/annotations/SlashCommandOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/PingPong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/PingPong.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -42,6 +47,7 @@
     &quot;Application.Bot.executor&quot;: &quot;Debug&quot;,
     &quot;Maven.SnipeBot [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor&quot;: &quot;Run&quot;,
     &quot;Maven.SnipeBot [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.snipebot [package].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
@@ -69,11 +75,13 @@
   </component>
   <component name="RunManager">
     <configuration name="Bot" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="me.djelectro.snipebot.BotMain" />
-      <module name="SnipeBot" />
+      <module name="snipebot" />
       <option name="PROGRAM_PARAMETERS" value="config.json" />
       <method v="2">
-        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="package" />
+        <option name="MakeProject" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -93,7 +101,9 @@
       <option name="presentableId" value="Default" />
       <updated>1725395997128</updated>
       <workItem from="1725395998152" duration="15085000" />
-      <workItem from="1725492109228" duration="1498000" />
+      <workItem from="1725492109228" duration="1517000" />
+      <workItem from="1725547164632" duration="18108000" />
+      <workItem from="1725930810388" duration="6869000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -111,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725492252781</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Begin adding database functions">
+      <option name="closed" value="true" />
+      <created>1725507640927</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725507640927</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +138,23 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Fix maven" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix maven" />
+    <MESSAGE value="Begin adding database functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Begin adding database functions" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/PingPong.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="me.djelectro.snipebot.types.SnipeGuild" memberName="snipeChannel" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

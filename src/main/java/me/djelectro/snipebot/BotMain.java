@@ -18,7 +18,7 @@ import static org.reflections.scanners.Scanners.SubTypes;
 
 public class BotMain {
 
-    public static void main(String[] args) throws InvocationTargetException, InstantiationException, IllegalAccessException {
+    public static void main(String[] args) throws InvocationTargetException, InstantiationException, IllegalAccessException, InterruptedException {
         List<ClassLoader> classLoadersList = new LinkedList<>();
         classLoadersList.add(ClasspathHelper.contextClassLoader());
         classLoadersList.add(ClasspathHelper.staticClassLoader());
@@ -35,7 +35,7 @@ public class BotMain {
             cpds.setDriverClass("org.sqlite.JDBC");
 
             // Set the JDBC URL for SQLite
-            cpds.setJdbcUrl("jdbc:sqlite:/path/to/your/database.db");
+            cpds.setJdbcUrl("jdbc:sqlite:db.sqlite");
 
             // Optional settings
             cpds.setMinPoolSize(5);
@@ -51,8 +51,9 @@ public class BotMain {
 
         JDA bot = JDABuilder.createDefault(config.getConfigValue("botToken"))
                 .build();
+        bot.awaitReady();
 
-        Reflections reflections = new Reflections(new ConfigurationBuilder().setUrls(ClasspathHelper.forClassLoader(classLoadersList.toArray(new ClassLoader[0]))).forPackage("me.djelectro.snipebot").filterInputsBy(new FilterBuilder().includePackage("me.djelectro.snipebot.commands")).setScanners(SubTypes.filterResultsBy(c -> true)));
+        Reflections reflections = new Reflections(new ConfigurationBuilder().setUrls(ClasspathHelper.forClassLoader(classLoadersList.toArray(new ClassLoader[0]))).forPackage("me.djelectro.snipebot").filterInputsBy(new FilterBuilder().includePackage("me.djelectro.snipebot.modules")).setScanners(SubTypes.filterResultsBy(c -> true)));
         for (Class<?> classes : reflections.get(SubTypes.of(Object.class).asClass())) {
             if(classes.getSuperclass() == Module.class){
                 System.out.println("Adding " + classes.getName());

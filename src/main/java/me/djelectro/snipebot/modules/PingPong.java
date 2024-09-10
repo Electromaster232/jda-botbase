@@ -13,7 +13,7 @@ public class PingPong extends Module {
     }
 
     @SlashCommand(name="echo", description = "I echo you!", options = {
-            @SlashCommandOption(name="msg", option= OptionType.STRING, description = "Your message")
+            @SlashCommandOption(name="msg", option= OptionType.STRING, description = "Your message", required = true)
     })
     public void echo(SlashCommandInteractionEvent event){
         event.reply(event.getOption("msg").getAsString()).queue();

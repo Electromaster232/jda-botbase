@@ -35,7 +35,7 @@ public abstract class Module implements EventListener {
                     slashCommands.put(sla.name(), method);
                     List<OptionData> resList = new ArrayList<>();
                     Arrays.stream(sla.options()).toList().forEach(item -> {
-                        resList.add(new OptionData(item.option(), item.name(), item.description()));
+                        resList.add(new OptionData(item.option(), item.name(), item.description(), item.required()));
                     });
                     System.out.println("Adding command " + sla.name() );
                     jda.upsertCommand(Commands.slash(sla.name(), sla.description()).addOptions(resList)).queue();
@@ -69,7 +69,8 @@ public abstract class Module implements EventListener {
     public void onSlashCommand(SlashCommandInteractionEvent eV){
         System.out.println("Slash Command Handled");
         try {
-            slashCommands.get(eV.getName()).invoke(this, eV);
+            if(slashCommands.containsKey(eV.getName()))
+                slashCommands.get(eV.getName()).invoke(this, eV);
         } catch (IllegalAccessException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }

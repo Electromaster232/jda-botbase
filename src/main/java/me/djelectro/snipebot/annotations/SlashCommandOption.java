@@ -15,4 +15,6 @@ public @interface SlashCommandOption {
     OptionType option();
 
     String description();
+
+    boolean required() default false;
 }
