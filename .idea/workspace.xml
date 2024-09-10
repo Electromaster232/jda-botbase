@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b62020bf-3a86-4581-96a0-16607e9d114e" name="Changes" comment="Add mainclass to POM">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="b62020bf-3a86-4581-96a0-16607e9d114e" name="Changes" comment="Add shade">
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/BotMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/BotMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +36,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Bot.executor": "Run",
-    "Application.SnipePlugin.executor": "Debug",
+    "Application.SnipePlugin.executor": "Run",
     "Maven.SnipeBot [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor": "Run",
     "Maven.SnipeBot [package].executor": "Run",
     "Maven.SnipeModule [package].executor": "Run",
@@ -122,7 +122,7 @@
       <workItem from="1725547164632" duration="18108000" />
       <workItem from="1725930810388" duration="7174000" />
       <workItem from="1725977082283" duration="1652000" />
-      <workItem from="1725986634093" duration="4768000" />
+      <workItem from="1725986634093" duration="5042000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -196,7 +196,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725991538667</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add shade">
+      <option name="closed" value="true" />
+      <created>1725991609744</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1725991609744</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +219,8 @@
     <MESSAGE value="Add config to gitignore" />
     <MESSAGE value="Add modules to gitignore" />
     <MESSAGE value="Add mainclass to POM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add mainclass to POM" />
+    <MESSAGE value="Add shade" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add shade" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -59,7 +59,7 @@ public class BotMain {
         bot.awaitReady();
 
         // Register the core's modules
-        Reflections reflections = new Reflections(new ConfigurationBuilder().setUrls(ClasspathHelper.forClassLoader(classLoadersList.toArray(new ClassLoader[0]))).forPackage("me.djelectro.snipebot").filterInputsBy(new FilterBuilder().includePackage("me.djelectro.snipebot.modules")).setScanners(SubTypes.filterResultsBy(c -> true)));
+        Reflections reflections = new Reflections(new ConfigurationBuilder().setUrls(ClasspathHelper.forClassLoader(classLoadersList.toArray(new ClassLoader[0]))).forPackage("me.djelectro.djbot").filterInputsBy(new FilterBuilder().includePackage("me.djelectro.djbot.modules")).setScanners(SubTypes.filterResultsBy(c -> true)));
         for (Class<?> classes : reflections.get(SubTypes.of(Object.class).asClass())) {
             if(classes.getSuperclass() == Module.class){
                 System.out.println("Adding " + classes.getName());
