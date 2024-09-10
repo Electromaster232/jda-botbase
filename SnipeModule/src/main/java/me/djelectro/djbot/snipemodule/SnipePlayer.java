@@ -27,4 +27,12 @@ public class SnipePlayer {
         return Integer.parseInt(res.entrySet().iterator().next().getValue()[0]);
     }
 
+    public int getSnipedCount(SnipeGuild g){
+        Map<Integer, String[]> res = Database.getInstance().executeAndReturnData("SELECT COUNT(*) FROM snipes WHERE snipedid = ? AND guildid = ?", discordMember.getId(), g.getId());
+        if(res.isEmpty()){
+            return 0;
+        }
+        return Integer.parseInt(res.entrySet().iterator().next().getValue()[0]);
+    }
+
 }

@@ -70,7 +70,7 @@ public class Snipe extends Module {
         }
         User u = m.getAsUser();
         SnipePlayer sp = new SnipePlayer(u);
-        e.getHook().sendMessage(STR."Sniped \{sp.getSnipeCount(new SnipeGuild(e.getGuild()))} players in this guild.").queue();
+        e.getHook().sendMessage(STR."\{u.getEffectiveName()} has sniped \{sp.getSnipeCount(new SnipeGuild(e.getGuild()))} players in this guild.\nThey have been sniped \{sp.getSnipedCount(new SnipeGuild(e.getGuild()))} times.").queue();
     }
 
     @SlashCommand(name="snipeconfig", description = "Set the configuration for this guild", options = {
