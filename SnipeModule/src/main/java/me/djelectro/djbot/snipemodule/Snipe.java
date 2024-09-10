@@ -24,7 +24,7 @@ public class Snipe extends Module {
         event.deferReply().queue();
         SnipeImpl s = SnipeImpl.createSnipe(event);
         if(s == null) {
-            event.getHook().sendMessage("Snipe failed to process, code 3").queue();;
+            event.getHook().sendMessage("(Error code 3) Snipe failed to process. Did you specify a valid user in your mention?").queue();
             return;
         }
         if(!s.process()){

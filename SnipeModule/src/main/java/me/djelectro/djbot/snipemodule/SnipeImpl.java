@@ -76,24 +76,28 @@ public class SnipeImpl {
     public int getId(){return id;}
 
     public static SnipeImpl createSnipe(CommandInteractionPayload event){
-        OptionMapping m = event.getOption("member");
-        if(m == null) {
+        try {
+            OptionMapping m = event.getOption("member");
+            if (m == null) {
+                return null;
+            }
+            User mA = m.getAsUser();
+
+            OptionMapping oMI = event.getOption("attachment");
+            if (oMI == null) {
+                return null;
+            }
+            Message.Attachment attachment = oMI.getAsAttachment();
+
+            OptionMapping msg = event.getOption("message");
+            if (msg != null) {
+                return new SnipeImpl(new SnipePlayer(event.getUser()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()), msg.getAsString());
+            }
+
+            return new SnipeImpl(new SnipePlayer(event.getUser()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()));
+        }catch(IllegalStateException _){
             return null;
         }
-        User mA = m.getAsUser();
-
-        OptionMapping oMI = event.getOption("attachment");
-        if(oMI == null){
-            return null;
-        }
-        Message.Attachment attachment = oMI.getAsAttachment();
-
-        OptionMapping msg = event.getOption("message");
-        if(msg != null){
-            return new SnipeImpl(new SnipePlayer(event.getUser()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()),msg.getAsString());
-        }
-
-        return new SnipeImpl(new SnipePlayer(event.getUser()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()));
 
     }
 
