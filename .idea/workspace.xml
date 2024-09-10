@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b62020bf-3a86-4581-96a0-16607e9d114e" name="Changes" comment="Move everything to be modularized. This is also a WIP.">
+    <list default="true" id="b62020bf-3a86-4581-96a0-16607e9d114e" name="Changes" comment="Add config to gitignore">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -123,7 +123,7 @@
       <workItem from="1725547164632" duration="18108000" />
       <workItem from="1725930810388" duration="7174000" />
       <workItem from="1725977082283" duration="1652000" />
-      <workItem from="1725986634093" duration="2927000" />
+      <workItem from="1725986634093" duration="3086000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -165,7 +165,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725989556403</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add config to gitignore">
+      <option name="closed" value="true" />
+      <created>1725989581566</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1725989581566</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add config to gitignore">
+      <option name="closed" value="true" />
+      <created>1725989641460</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1725989641460</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +193,8 @@
     <MESSAGE value="Begin adding database functions" />
     <MESSAGE value="This code is incredibly cursed but it does work! More changes and some refactoring to come." />
     <MESSAGE value="Move everything to be modularized. This is also a WIP." />
-    <option name="LAST_COMMIT_MESSAGE" value="Move everything to be modularized. This is also a WIP." />
+    <MESSAGE value="Add config to gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add config to gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
