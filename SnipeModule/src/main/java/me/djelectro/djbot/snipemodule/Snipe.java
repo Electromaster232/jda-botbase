@@ -7,6 +7,7 @@ import me.djelectro.djbot.annotations.SlashCommandOption;
 import me.djelectro.djbot.modules.Module;
 
 import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -63,14 +64,19 @@ public class Snipe extends Module {
     })
     public void showSnipes(SlashCommandInteractionEvent e){
         e.deferReply().queue();
-        OptionMapping m = e.getOption("user");
-        if(m == null) {
+        OptionMapping om = e.getOption("user");
+        if(om == null) {
             e.reply("Error locating user").queue();
             return;
         }
-        User u = m.getAsUser();
+        Member m = om.getAsMember();
+        User u = om.getAsUser();
+        if(m == null){
+            e.getHook().sendMessage("Could not process your request. Did you specify a valid user?").queue();
+            return;
+        }
         SnipePlayer sp = new SnipePlayer(u);
-        e.getHook().sendMessage(STR."\{u.getEffectiveName()} has sniped \{sp.getSnipeCount(new SnipeGuild(e.getGuild()))} players in this guild.\nThey have been sniped \{sp.getSnipedCount(new SnipeGuild(e.getGuild()))} times.").queue();
+        e.getHook().sendMessage(STR."\{m.getEffectiveName()} has sniped \{sp.getSnipeCount(new SnipeGuild(e.getGuild()))} players in this guild.\nThey have been sniped \{sp.getSnipedCount(new SnipeGuild(e.getGuild()))} times.").queue();
     }
 
     @SlashCommand(name="snipeconfig", description = "Set the configuration for this guild", options = {
