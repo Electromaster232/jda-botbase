@@ -1,7 +1,7 @@
-package me.djelectro.snipebot.modules;
+package me.djelectro.djbot.modules;
 
-import me.djelectro.snipebot.annotations.EventHandler;
-import me.djelectro.snipebot.annotations.SlashCommand;
+import me.djelectro.djbot.annotations.EventHandler;
+import me.djelectro.djbot.annotations.SlashCommand;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.events.GenericEvent;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;

@@ -1,4 +1,4 @@
-package me.djelectro.snipebot;
+package me.djelectro.djbot;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

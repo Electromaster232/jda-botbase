@@ -1,4 +1,4 @@
-package me.djelectro.snipebot;
+package me.djelectro.djbot;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import kotlin.Pair;

@@ -1,22 +1,16 @@
-package me.djelectro.snipebot.modules;
+package me.djelectro.djbot.snipemodule;
 
 import club.minnced.discord.webhook.WebhookClient;
 import club.minnced.discord.webhook.send.WebhookMessageBuilder;
-import me.djelectro.snipebot.Database;
-import me.djelectro.snipebot.annotations.SlashCommand;
-import me.djelectro.snipebot.annotations.SlashCommandOption;
-import me.djelectro.snipebot.types.SnipeGuild;
-import me.djelectro.snipebot.types.SnipePlayer;
-import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.Message;
+import me.djelectro.djbot.annotations.SlashCommand;
+import me.djelectro.djbot.annotations.SlashCommandOption;
+import me.djelectro.djbot.modules.Module;
+
 import net.dv8tion.jda.api.entities.User;
-import net.dv8tion.jda.api.entities.channel.Channel;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
-
-import javax.xml.crypto.Data;
 
 public class Snipe extends Module {
 
@@ -27,7 +21,7 @@ public class Snipe extends Module {
     })
     public void snipeCmd(SlashCommandInteractionEvent event) throws Exception {
         event.deferReply().queue();
-        me.djelectro.snipebot.types.Snipe s = me.djelectro.snipebot.types.Snipe.createSnipe(event);
+        SnipeImpl s = SnipeImpl.createSnipe(event);
         if(s == null) {
             event.getHook().sendMessage("Snipe failed to process, code 3").queue();;
             return;

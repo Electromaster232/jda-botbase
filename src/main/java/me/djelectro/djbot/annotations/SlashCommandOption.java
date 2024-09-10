@@ -1,4 +1,4 @@
-package me.djelectro.snipebot.annotations;
+package me.djelectro.djbot.annotations;
 
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 

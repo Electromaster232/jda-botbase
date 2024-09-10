@@ -4,18 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b62020bf-3a86-4581-96a0-16607e9d114e" name="Changes" comment="Begin adding database functions">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/Snipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/types/Snipe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/types/SnipeGuild.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/types/SnipePlayer.java" afterDir="false" />
+    <list default="true" id="b62020bf-3a86-4581-96a0-16607e9d114e" name="Changes" comment="This code is incredibly cursed but it does work! More changes and some refactoring to come.">
+      <change afterPath="$PROJECT_DIR$/SnipeModule/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SnipeModule/src/main/java/PluginMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/modules/Plugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/BotMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/BotMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/annotations/SlashCommandOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/annotations/SlashCommandOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/PingPong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/PingPong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/BotMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/BotMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/annotations/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/annotations/EventHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/annotations/SlashCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/annotations/SlashCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/annotations/SlashCommandOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/annotations/SlashCommandOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/modules/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/PingPong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/modules/PingPong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/Snipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/SnipeModule/src/main/java/me/djelectro/djbot/snipemodule/Snipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/types/Snipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/SnipeModule/src/main/java/me/djelectro/djbot/snipemodule/SnipeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/types/SnipeGuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/SnipeModule/src/main/java/me/djelectro/djbot/snipemodule/SnipeGuild.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/types/SnipePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/SnipeModule/src/main/java/me/djelectro/djbot/snipemodule/SnipePlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +36,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -42,48 +53,74 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Bot.executor&quot;: &quot;Debug&quot;,
-    &quot;Maven.SnipeBot [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.SnipeBot [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.snipebot [package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Bot.executor": "Run",
+    "Application.SnipePlugin.executor": "Debug",
+    "Maven.SnipeBot [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor": "Run",
+    "Maven.SnipeBot [package].executor": "Run",
+    "Maven.SnipeModule [package].executor": "Run",
+    "Maven.djbot [compile].executor": "Run",
+    "Maven.djbot [deploy].executor": "Run",
+    "Maven.djbot [install].executor": "Run",
+    "Maven.djbot [package].executor": "Run",
+    "Maven.snipebot [package].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "openjdk-22",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.1484375",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="me.djelectro.snipebot" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SnipePlugin">
     <configuration name="Bot" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="me.djelectro.snipebot.BotMain" />
+      <option name="MAIN_CLASS_NAME" value="me.djelectro.djbot.BotMain" />
       <module name="snipebot" />
       <option name="PROGRAM_PARAMETERS" value="config.json" />
       <method v="2">
         <option name="MakeProject" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SnipePlugin" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="me.djelectro.djbot.BotMain" />
+      <module name="snipebot" />
+      <option name="PROGRAM_PARAMETERS" value="config.json" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/SnipeModule/pom.xml" goal="package" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Bot" />
+      <item itemvalue="Application.SnipePlugin" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -103,7 +140,9 @@
       <workItem from="1725395998152" duration="15085000" />
       <workItem from="1725492109228" duration="1517000" />
       <workItem from="1725547164632" duration="18108000" />
-      <workItem from="1725930810388" duration="6869000" />
+      <workItem from="1725930810388" duration="7174000" />
+      <workItem from="1725977082283" duration="1652000" />
+      <workItem from="1725986634093" duration="2887000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -129,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725507640927</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="This code is incredibly cursed but it does work! More changes and some refactoring to come.">
+      <option name="closed" value="true" />
+      <created>1725937862676</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725937862676</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,13 +186,14 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Fix maven" />
     <MESSAGE value="Begin adding database functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Begin adding database functions" />
+    <MESSAGE value="This code is incredibly cursed but it does work! More changes and some refactoring to come." />
+    <option name="LAST_COMMIT_MESSAGE" value="This code is incredibly cursed but it does work! More changes and some refactoring to come." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/PingPong.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/me/djelectro/djbot/modules/PingPong.java</url>
           <line>18</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>

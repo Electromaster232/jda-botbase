@@ -1,12 +1,8 @@
-package me.djelectro.snipebot.types;
+package me.djelectro.djbot.snipemodule;
 
-import me.djelectro.snipebot.Database;
-import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.Member;
+import me.djelectro.djbot.Database;
 import net.dv8tion.jda.api.entities.User;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Map;
 
 public class SnipePlayer {

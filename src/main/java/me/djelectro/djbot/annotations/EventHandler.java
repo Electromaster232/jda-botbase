@@ -1,6 +1,4 @@
-package me.djelectro.snipebot.annotations;
-
-import net.dv8tion.jda.api.events.GenericEvent;
+package me.djelectro.djbot.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

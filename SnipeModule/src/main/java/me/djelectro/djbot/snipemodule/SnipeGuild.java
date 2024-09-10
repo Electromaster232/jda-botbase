@@ -1,14 +1,10 @@
-package me.djelectro.snipebot.types;
+package me.djelectro.djbot.snipemodule;
 
-import me.djelectro.snipebot.Database;
+import me.djelectro.djbot.Database;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Webhook;
-import net.dv8tion.jda.api.entities.channel.Channel;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
-import net.dv8tion.jda.internal.JDAImpl;
-import net.dv8tion.jda.internal.entities.GuildImpl;
 
-import javax.xml.crypto.Data;
 import java.util.Map;
 
 public class SnipeGuild implements AutoCloseable {

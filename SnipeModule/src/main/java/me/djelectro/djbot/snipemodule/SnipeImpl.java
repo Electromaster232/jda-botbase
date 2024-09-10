@@ -1,8 +1,7 @@
-package me.djelectro.snipebot.types;
+package me.djelectro.djbot.snipemodule;
 
-import me.djelectro.snipebot.Database;
+import me.djelectro.djbot.Database;
 import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.interactions.commands.CommandInteractionPayload;
@@ -10,11 +9,10 @@ import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Snipe {
+public class SnipeImpl {
 
     private int id = 0;
 
@@ -48,7 +46,7 @@ public class Snipe {
     private String message;
 
 
-    public Snipe(SnipePlayer sniper, SnipePlayer sniped, String attachUrl, Date time, SnipeGuild g){
+    public SnipeImpl(SnipePlayer sniper, SnipePlayer sniped, String attachUrl, Date time, SnipeGuild g){
         this.sniped = sniped;
         this.sniper = sniper;
         this.attachUrl = attachUrl;
@@ -56,7 +54,7 @@ public class Snipe {
         this.guild = g;
     }
 
-    public Snipe(SnipePlayer sniper, SnipePlayer sniped, String attachUrl, Date time, SnipeGuild g, String message){
+    public SnipeImpl(SnipePlayer sniper, SnipePlayer sniped, String attachUrl, Date time, SnipeGuild g, String message){
         this.sniped = sniped;
         this.sniper = sniper;
         this.attachUrl = attachUrl;
@@ -66,7 +64,7 @@ public class Snipe {
     }
 
     // If we only have the ID, we should try to retrieve the rest of the information from the database
-    public Snipe(int id, JDA bot){
+    public SnipeImpl(int id, JDA bot){
         String[] row = Database.getInstance().executeAndReturnData("SELECT * FROM snipes WHERE id = ?", id).entrySet().iterator().next().getValue();
         this.sniper = new SnipePlayer(bot.getUserById(row[1]));
         this.sniped = new SnipePlayer(bot.getUserById(row[2]));
@@ -77,7 +75,7 @@ public class Snipe {
 
     public int getId(){return id;}
 
-    public static Snipe createSnipe(CommandInteractionPayload event){
+    public static SnipeImpl createSnipe(CommandInteractionPayload event){
         OptionMapping m = event.getOption("member");
         if(m == null) {
             return null;
@@ -92,10 +90,10 @@ public class Snipe {
 
         OptionMapping msg = event.getOption("message");
         if(msg != null){
-            return new Snipe(new SnipePlayer(event.getUser()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()),msg.getAsString());
+            return new SnipeImpl(new SnipePlayer(event.getUser()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()),msg.getAsString());
         }
 
-        return new Snipe(new SnipePlayer(event.getUser()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()));
+        return new SnipeImpl(new SnipePlayer(event.getUser()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()));
 
     }
 
