@@ -51,12 +51,8 @@ public class Snipe extends Module {
             builder.setUsername(event.getMember().getEffectiveName());
             builder.setAvatarUrl(event.getMember().getEffectiveAvatarUrl());
             client.send(builder.build()).join();
-        };
+        }
         event.getHook().sendMessage("Snipe recorded.").queue();
-//        String channelString = Database.getInstance().executeAndReturnData("SELECT channelid FROM guild_config WHERE guildid = ?", String.valueOf(guildId)).entrySet().iterator().next().getValue()[0];
-//        long channelID = Long.parseLong(channelString);
-//
-//        event.getGuild().getTextChannelById(channelID).sendMessage(s.getSniper().getDiscordMember().getEffectiveName() + " sniped " + s.getSniped().getDiscordMember().getEffectiveName()).queue();
     }
 
     @SlashCommand(name = "getsnipes", description = "Show how many snipes a player has", options = {
@@ -65,23 +61,13 @@ public class Snipe extends Module {
     public void showSnipes(SlashCommandInteractionEvent e){
         e.deferReply().queue();
         OptionMapping om = e.getOption("user");
-        if(om == null) {
-            e.reply("Error locating user").queue();
-            return;
-        }
-        Member m;
-        try {
-            m = om.getAsMember();
-        }catch (IllegalStateException _){
+
+        SnipePlayer sp = SnipePlayer.getPlayerFromMapping(om);
+        if(sp == null){
             e.getHook().sendMessage("Could not process your request. Did you specify a valid user?").queue();
             return;
         }
-        if (m == null) {
-            e.getHook().sendMessage("Could not process your request. Did you specify a valid user?").queue();
-            return;
-        }
-        SnipePlayer sp = new SnipePlayer(m);
-        e.getHook().sendMessage(STR."\{m.getEffectiveName()} has sniped \{sp.getSnipeCount(new SnipeGuild(e.getGuild()))} players in this guild.\nThey have been sniped \{sp.getSnipedCount(new SnipeGuild(e.getGuild()))} times.").queue();
+        e.getHook().sendMessage(STR."\{sp.getDiscordMember().getEffectiveName()} has sniped \{sp.getSnipeCount(new SnipeGuild(e.getGuild()))} players in this guild.\nThey have been sniped \{sp.getSnipedCount(new SnipeGuild(e.getGuild()))} times.").queue();
     }
 
     @SlashCommand(name="snipeconfig", description = "Set the configuration for this guild", options = {
