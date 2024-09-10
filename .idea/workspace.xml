@@ -4,28 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b62020bf-3a86-4581-96a0-16607e9d114e" name="Changes" comment="This code is incredibly cursed but it does work! More changes and some refactoring to come.">
-      <change afterPath="$PROJECT_DIR$/SnipeModule/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SnipeModule/src/main/java/PluginMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/modules/Plugin.java" afterDir="false" />
+    <list default="true" id="b62020bf-3a86-4581-96a0-16607e9d114e" name="Changes" comment="Move everything to be modularized. This is also a WIP.">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/BotMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/BotMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/annotations/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/annotations/EventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/annotations/SlashCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/annotations/SlashCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/annotations/SlashCommandOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/annotations/SlashCommandOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/modules/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/PingPong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/djelectro/djbot/modules/PingPong.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/modules/Snipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/SnipeModule/src/main/java/me/djelectro/djbot/snipemodule/Snipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/types/Snipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/SnipeModule/src/main/java/me/djelectro/djbot/snipemodule/SnipeImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/types/SnipeGuild.java" beforeDir="false" afterPath="$PROJECT_DIR$/SnipeModule/src/main/java/me/djelectro/djbot/snipemodule/SnipeGuild.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/djelectro/snipebot/types/SnipePlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/SnipeModule/src/main/java/me/djelectro/djbot/snipemodule/SnipePlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +123,7 @@
       <workItem from="1725547164632" duration="18108000" />
       <workItem from="1725930810388" duration="7174000" />
       <workItem from="1725977082283" duration="1652000" />
-      <workItem from="1725986634093" duration="2887000" />
+      <workItem from="1725986634093" duration="2927000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -176,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725937862676</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Move everything to be modularized. This is also a WIP.">
+      <option name="closed" value="true" />
+      <created>1725989556403</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1725989556403</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,7 +176,8 @@
     <MESSAGE value="Fix maven" />
     <MESSAGE value="Begin adding database functions" />
     <MESSAGE value="This code is incredibly cursed but it does work! More changes and some refactoring to come." />
-    <option name="LAST_COMMIT_MESSAGE" value="This code is incredibly cursed but it does work! More changes and some refactoring to come." />
+    <MESSAGE value="Move everything to be modularized. This is also a WIP." />
+    <option name="LAST_COMMIT_MESSAGE" value="Move everything to be modularized. This is also a WIP." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
