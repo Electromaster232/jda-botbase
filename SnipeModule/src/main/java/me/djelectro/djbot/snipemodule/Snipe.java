@@ -6,6 +6,7 @@ import me.djelectro.djbot.annotations.SlashCommand;
 import me.djelectro.djbot.annotations.SlashCommandOption;
 import me.djelectro.djbot.modules.Module;
 
+import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -14,7 +15,7 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 
 public class Snipe extends Module {
 
-    @SlashCommand(name = "snipe", description = "Snipe a player", options = {
+    @SlashCommand(name = "snipe", description = "Snipe a player", perms = Permission.MESSAGE_SEND, options = {
             @SlashCommandOption(name="member", description = "The player you sniped", required = true, option = OptionType.MENTIONABLE),
             @SlashCommandOption(name = "attachment", option = OptionType.ATTACHMENT, description = "Attach your image", required = true),
             @SlashCommandOption(name="message", option = OptionType.STRING, description = "An optional message", required = false)
