@@ -69,9 +69,17 @@ public class Snipe extends Module {
             e.reply("Error locating user").queue();
             return;
         }
-        Member m = om.getAsMember();
-        User u = om.getAsUser();
-        if(m == null){
+        Member m;
+        User u;
+        try {
+            m = om.getAsMember();
+            u = om.getAsUser();
+
+        }catch (IllegalStateException _){
+            e.getHook().sendMessage("Could not process your request. Did you specify a valid user?").queue();
+            return;
+        }
+        if (m == null) {
             e.getHook().sendMessage("Could not process your request. Did you specify a valid user?").queue();
             return;
         }
