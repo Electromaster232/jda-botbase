@@ -47,7 +47,7 @@ public class Snipe extends Module {
             String msg = s.getMessage();
             if(msg == null)
                 msg = "";
-            builder.setContent(STR."\{s.getSniped().getDiscordMember().getAsMention()}\n\{msg}\n\{s.getAttachUrl()}");
+            builder.setContent(STR."\{s.getSniped().getDiscordUser().getAsMention()}\n\{msg}\n\{s.getAttachUrl()}");
             builder.setUsername(event.getMember().getEffectiveName());
             builder.setAvatarUrl(event.getMember().getEffectiveAvatarUrl());
             client.send(builder.build()).join();
@@ -70,11 +70,8 @@ public class Snipe extends Module {
             return;
         }
         Member m;
-        User u;
         try {
             m = om.getAsMember();
-            u = om.getAsUser();
-
         }catch (IllegalStateException _){
             e.getHook().sendMessage("Could not process your request. Did you specify a valid user?").queue();
             return;
@@ -83,7 +80,7 @@ public class Snipe extends Module {
             e.getHook().sendMessage("Could not process your request. Did you specify a valid user?").queue();
             return;
         }
-        SnipePlayer sp = new SnipePlayer(u);
+        SnipePlayer sp = new SnipePlayer(m);
         e.getHook().sendMessage(STR."\{m.getEffectiveName()} has sniped \{sp.getSnipeCount(new SnipeGuild(e.getGuild()))} players in this guild.\nThey have been sniped \{sp.getSnipedCount(new SnipeGuild(e.getGuild()))} times.").queue();
     }
 

@@ -2,6 +2,8 @@ package me.djelectro.djbot.snipemodule;
 
 import me.djelectro.djbot.Database;
 import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.interactions.commands.CommandInteractionPayload;
@@ -64,10 +66,10 @@ public class SnipeImpl {
     }
 
     // If we only have the ID, we should try to retrieve the rest of the information from the database
-    public SnipeImpl(int id, JDA bot){
+    public SnipeImpl(int id, Guild g){
         String[] row = Database.getInstance().executeAndReturnData("SELECT * FROM snipes WHERE id = ?", id).entrySet().iterator().next().getValue();
-        this.sniper = new SnipePlayer(bot.getUserById(row[1]));
-        this.sniped = new SnipePlayer(bot.getUserById(row[2]));
+        this.sniper = new SnipePlayer(g.getMemberById(row[1]));
+        this.sniped = new SnipePlayer(g.getMemberById(row[2]));
         this.attachUrl = row[3];
         this.time = stringToDate(row[4]);
         this.message = row[5];
@@ -81,7 +83,7 @@ public class SnipeImpl {
             if (m == null) {
                 return null;
             }
-            User mA = m.getAsUser();
+            Member mA = m.getAsMember();
 
             OptionMapping oMI = event.getOption("attachment");
             if (oMI == null) {
@@ -91,10 +93,10 @@ public class SnipeImpl {
 
             OptionMapping msg = event.getOption("message");
             if (msg != null) {
-                return new SnipeImpl(new SnipePlayer(event.getUser()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()), msg.getAsString());
+                return new SnipeImpl(new SnipePlayer(event.getMember()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()), msg.getAsString());
             }
 
-            return new SnipeImpl(new SnipePlayer(event.getUser()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()));
+            return new SnipeImpl(new SnipePlayer(event.getMember()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()));
         }catch(IllegalStateException _){
             return null;
         }

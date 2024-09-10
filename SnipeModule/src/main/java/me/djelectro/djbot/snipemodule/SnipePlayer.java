@@ -1,15 +1,16 @@
 package me.djelectro.djbot.snipemodule;
 
 import me.djelectro.djbot.Database;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.User;
 
 import java.util.Map;
 
 public class SnipePlayer {
 
-    private User discordMember;
+    private Member discordMember;
 
-    public SnipePlayer(User discordMember){
+    public SnipePlayer(Member discordMember){
         this.discordMember = discordMember;
     }
 
@@ -17,7 +18,7 @@ public class SnipePlayer {
         return discordMember.getId();
     }
 
-    public User getDiscordMember(){return discordMember;}
+    public User getDiscordUser(){return discordMember.getUser();}
 
     public int getSnipeCount(SnipeGuild g){
         Map<Integer, String[]> res = Database.getInstance().executeAndReturnData("SELECT COUNT(*) FROM snipes WHERE userid = ? AND guildid = ?", discordMember.getId(), g.getId());
