@@ -57,4 +57,19 @@ public class SnipeGuild implements AutoCloseable {
         if(this.hook != null)
             hook.delete().queue();
     }
+
+    /**
+     * Get all players who have participated in this Guild
+     * @return An array of Players for this guild
+     */
+    public SnipePlayer[] getGuildPlayers(){
+        Map<Integer, String[]> results = Database.getInstance().executeAndReturnData("SELECT DISTINCT userid FROM snipes WHERE guildid = ? LIMIT 10;", getId());
+        // Each individual player has their own String[] in the SQL call... so we need to merge all of these arrays while also converting to SnipePlayer
+        SnipePlayer[] playerIds = new SnipePlayer[results.size()];
+        results.forEach((k, v) -> {
+            playerIds[k-1] = new SnipePlayer(guild.getMemberById(v[0]));
+        });
+        return playerIds;
+
+    }
 }

@@ -7,12 +7,13 @@ import me.djelectro.djbot.annotations.SlashCommandOption;
 import me.djelectro.djbot.modules.Module;
 
 import net.dv8tion.jda.api.Permission;
-import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
+
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class Snipe extends Module {
 
@@ -91,5 +92,65 @@ public class Snipe extends Module {
         }catch (IllegalStateException ise){
             e.getHook().sendMessage("The channel specified is not a text channel!").queue();
         }
+    }
+
+    @SlashCommand(name="leaderboard", description = "Snipe leaderboard for this guild", perms = Permission.MESSAGE_SEND)
+    public void guildLeaderboard(SlashCommandInteractionEvent e){
+        e.deferReply().queue();
+        SnipeGuild sg = new SnipeGuild(e.getGuild());
+        String leaderboardTable = buildLeaderboard(sg);
+
+        e.getHook().sendMessage(leaderboardTable).queue();
+
+
+    }
+
+    @SlashCommand(name="loserboard", description = "Snipe loserboard for this guild", perms = Permission.MESSAGE_SEND)
+    public void guildLoserboard(SlashCommandInteractionEvent e){
+        e.deferReply().queue();
+        SnipeGuild sg = new SnipeGuild(e.getGuild());
+        String leaderboardTable = buildLoserboard(sg);
+
+        e.getHook().sendMessage(leaderboardTable).queue();
+
+
+    }
+
+    private static String buildLeaderboard(SnipeGuild g) {
+        SnipePlayer[] userStatsList = g.getGuildPlayers();
+        Arrays.sort(userStatsList, Comparator.comparingInt(a -> a.getSnipeCount(g)));
+        StringBuilder sb = new StringBuilder();
+        sb.append("```\n"); // Start of code block
+
+        // Headers
+        sb.append(String.format("%-15s | %-10s | %-10s\n", "User", "# of Snipes", "# times Sniped"));
+        sb.append("----------------|-------------|------------\n");
+
+        // Rows
+        for (SnipePlayer stats : userStatsList) {
+            sb.append(String.format("%-15s | %-11d | %-10d\n", stats.getDiscordMember().getEffectiveName(), stats.getSnipeCount(g), stats.getSnipedCount(g)));
+        }
+
+        sb.append("```"); // End of code block
+        return sb.toString();
+    }
+
+    private static String buildLoserboard(SnipeGuild g) {
+        SnipePlayer[] userStatsList = g.getGuildPlayers();
+        Arrays.sort(userStatsList, Comparator.comparingInt(a -> a.getSnipedCount(g)));
+        StringBuilder sb = new StringBuilder();
+        sb.append("```\n"); // Start of code block
+
+        // Headers
+        sb.append(String.format("%-15s | %-10s | %-10s\n", "User", "# times Sniped", "# of Snipes"));
+        sb.append("----------------|----------------|------------\n");
+
+        // Rows
+        for (SnipePlayer stats : userStatsList) {
+            sb.append(String.format("%-15s | %-14d | %-10d\n", stats.getDiscordMember().getEffectiveName(), stats.getSnipedCount(g), stats.getSnipeCount(g)));
+        }
+
+        sb.append("```"); // End of code block
+        return sb.toString();
     }
 }
