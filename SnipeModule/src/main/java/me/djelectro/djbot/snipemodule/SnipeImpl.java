@@ -93,10 +93,10 @@ public class SnipeImpl {
 
             OptionMapping msg = event.getOption("message");
             if (msg != null) {
-                return new SnipeImpl(new SnipePlayer(event.getMember()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()), msg.getAsString());
+                return new SnipeImpl(new SnipePlayer(event.getMember()), new SnipePlayer(mA), attachment.getProxyUrl(), now(), new SnipeGuild(event.getGuild()), msg.getAsString());
             }
 
-            return new SnipeImpl(new SnipePlayer(event.getMember()), new SnipePlayer(mA), attachment.getUrl(), now(), new SnipeGuild(event.getGuild()));
+            return new SnipeImpl(new SnipePlayer(event.getMember()), new SnipePlayer(mA), attachment.getProxyUrl(), now(), new SnipeGuild(event.getGuild()));
         }catch(IllegalStateException _){
             return null;
         }
