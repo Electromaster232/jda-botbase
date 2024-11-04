@@ -97,28 +97,30 @@ public class Snipe extends Module {
     @SlashCommand(name="leaderboard", description = "Snipe leaderboard for this guild", perms = Permission.MESSAGE_SEND)
     public void guildLeaderboard(SlashCommandInteractionEvent e){
         e.deferReply().queue();
-        SnipeGuild sg = new SnipeGuild(e.getGuild());
-        String leaderboardTable = buildLeaderboard(sg);
+        new Thread(() -> {
+            SnipeGuild sg = new SnipeGuild(e.getGuild());
+            String leaderboardTable = buildLeaderboard(sg);
 
-        e.getHook().sendMessage(leaderboardTable).queue();
-
+            e.getHook().sendMessage(leaderboardTable).queue();
+        }).start();
 
     }
 
     @SlashCommand(name="loserboard", description = "Snipe loserboard for this guild", perms = Permission.MESSAGE_SEND)
     public void guildLoserboard(SlashCommandInteractionEvent e){
         e.deferReply().queue();
-        SnipeGuild sg = new SnipeGuild(e.getGuild());
-        String leaderboardTable = buildLoserboard(sg);
+        new Thread(() -> {
+            SnipeGuild sg = new SnipeGuild(e.getGuild());
+            String leaderboardTable = buildLoserboard(sg);
 
-        e.getHook().sendMessage(leaderboardTable).queue();
-
+            e.getHook().sendMessage(leaderboardTable).queue();
+        }).start();
 
     }
 
     private static String buildLeaderboard(SnipeGuild g) {
         SnipePlayer[] userStatsList = g.getGuildPlayers();
-        Arrays.sort(userStatsList, Comparator.comparingInt(a -> a.getSnipeCount(g)));
+        Arrays.sort(userStatsList, (a, b) -> Integer.compare(b.getSnipeCount(g), a.getSnipeCount(g)));
         StringBuilder sb = new StringBuilder();
         sb.append("```\n"); // Start of code block
 
@@ -137,7 +139,7 @@ public class Snipe extends Module {
 
     private static String buildLoserboard(SnipeGuild g) {
         SnipePlayer[] userStatsList = g.getGuildPlayers();
-        Arrays.sort(userStatsList, Comparator.comparingInt(a -> a.getSnipedCount(g)));
+        Arrays.sort(userStatsList, (a, b) -> Integer.compare(b.getSnipedCount(g), a.getSnipedCount(g)));
         StringBuilder sb = new StringBuilder();
         sb.append("```\n"); // Start of code block
 
